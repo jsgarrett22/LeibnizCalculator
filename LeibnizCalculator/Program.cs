@@ -34,7 +34,7 @@ namespace LeibnizCalculator
                 {
                 }
 
-                if (userCount <= 1000000)
+                if (userCount <= 1_000_000)
                 {
                     continue;
                 }
@@ -48,22 +48,12 @@ namespace LeibnizCalculator
                     {
                         switch (iteration)
                         {
-                            case 10:
-                                Console.WriteLine($"At iteration {iteration:n0}, the value of pi is {pi:n10}");
-                                break;
-                            case 1000:
-                                Console.WriteLine($"At iteration {iteration:n0}, the value of pi is {pi:n10}");
-                                break;
-                            case 100000:
-                                Console.WriteLine($"At iteration {iteration:n0}, the value of pi is {pi:n10}");
-                                break;
-                            case 500000:
-                                Console.WriteLine($"At iteration {iteration:n0}, the value of pi is  {pi:n10}");
-                                break;
-                            case 1000000:
-                                Console.WriteLine($"At iteration {iteration:n0}, the value of pi is  {pi:n10}");
-                                break;
-                            case 2000000:
+                            case 10:   
+                            case 1_000:
+                            case 100_000: 
+                            case 500_000:   
+                            case 1_000_000:
+                            case 2_000_000:
                                 Console.WriteLine($"At iteration {iteration:n0}, the value of pi is  {pi:n10}");
                                 break;
                             default:
