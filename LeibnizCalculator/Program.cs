@@ -15,7 +15,6 @@ namespace LeibnizCalculator
         {
             double summation = 0;
             double pi = 0;
-            int userCount = 0;
             bool validate = false;
 
             Console.WriteLine("Joshua's Implementation of the Leibniz Formula:\n");
@@ -25,15 +24,10 @@ namespace LeibnizCalculator
             // START
             while (!validate)
             {
-                try
-                {
-                    Console.Write("Please enter value > 1 million: ");
-                    userCount = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception)
-                {
-                }
-
+               
+                Console.Write("Please enter value > 1 million: ");
+                int.TryParse(Console.ReadLine(), out int userCount);
+                
                 if (userCount <= 1_000_000)
                 {
                     continue;
