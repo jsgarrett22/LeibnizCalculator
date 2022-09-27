@@ -15,7 +15,6 @@ namespace LeibnizCalculator
         {
             double summation = 0;
             double pi = 0;
-            int userCount = 0;
             bool validate = false;
 
             Console.WriteLine("Joshua's Implementation of the Leibniz Formula:\n");
@@ -25,16 +24,11 @@ namespace LeibnizCalculator
             // START
             while (!validate)
             {
-                try
-                {
-                    Console.Write("Please enter value > 1 million: ");
-                    userCount = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception)
-                {
-                }
-
-                if (userCount <= 1000000)
+               
+                Console.Write("Please enter value > 1 million: ");
+                int.TryParse(Console.ReadLine(), out int userCount);
+                
+                if (userCount <= 1_000_000)
                 {
                     continue;
                 }
@@ -48,22 +42,12 @@ namespace LeibnizCalculator
                     {
                         switch (iteration)
                         {
-                            case 10:
-                                Console.WriteLine($"At iteration {iteration:n0}, the value of pi is {pi:n10}");
-                                break;
-                            case 1000:
-                                Console.WriteLine($"At iteration {iteration:n0}, the value of pi is {pi:n10}");
-                                break;
-                            case 100000:
-                                Console.WriteLine($"At iteration {iteration:n0}, the value of pi is {pi:n10}");
-                                break;
-                            case 500000:
-                                Console.WriteLine($"At iteration {iteration:n0}, the value of pi is  {pi:n10}");
-                                break;
-                            case 1000000:
-                                Console.WriteLine($"At iteration {iteration:n0}, the value of pi is  {pi:n10}");
-                                break;
-                            case 2000000:
+                            case 10:   
+                            case 1_000:
+                            case 100_000: 
+                            case 500_000:   
+                            case 1_000_000:
+                            case 2_000_000:
                                 Console.WriteLine($"At iteration {iteration:n0}, the value of pi is  {pi:n10}");
                                 break;
                             default:
